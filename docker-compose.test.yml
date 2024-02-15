@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  nestjs-test-db:
+    container_name: nestjs-test-db
+    image: postgres:latest
+    ports:
+      - 5431:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123123
+      POSTGRES_DB: nestjs-test
+    networks:
+      - nestjs-test-network
+networks:
+  nestjs-test-network:
+    name: nestjs-test-network
